@@ -1,5 +1,27 @@
 <h1>List of photos</h1>
 
+<hr>
+
+<form action="/create_photo" method="post">
+
+  <label for="image_box">Image</label>
+    <input id="image_box" type="text" name="image_box">
+
+  <label for="caption_box">Caption</label>
+  <textarea name="caption_box" id="caption_box"></textarea>
+
+  <label for="owner_id_box">Owner</label>
+  <input id="owner_id_box"type="text" name="owner_id_box">
+
+  <button>Add photo</button>
+  
+
+</form>
+
+<hr>
+
+
+
 <table border="1" >
    <tr>
     <th>Image</th>
