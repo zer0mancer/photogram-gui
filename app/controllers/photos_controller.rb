@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   def index
     matching_photos = Photo.all
-    @list_of_photos = matching_photos.order({:photos => :desc })
+    @list_of_photos = matching_photos.order({:photos => :asc })
     render({:template => "photo_templates/index"})
   end
 
@@ -40,7 +40,7 @@ class PhotosController < ApplicationController
 
     new_photo.save
 
-    redirect_to("/photos/" + new_photo.id.to_s)
+    redirect_to("/photos/#{ new_photo.id}")
 
   end
 
@@ -52,15 +52,15 @@ class PhotosController < ApplicationController
     the_photo = matching_photo.at(0)
 
 
-    input_image = params.fetch("image_box")
-    input_caption = params.fetch("caption_box")
+    input_image = params.fetch("browser_image")
+    input_caption = params.fetch("browser_caption")
 
     the_photo.image = input_image
     the_photo.caption = input_caption
 
     the_photo.save
 
-    redirect_to("/photos/" + <%= the_photo.id.to_s %>)
+    redirect_to("/photos/" +  the_photo.id.to_s)
 
 
 

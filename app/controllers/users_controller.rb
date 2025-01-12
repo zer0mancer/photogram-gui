@@ -19,6 +19,31 @@ matching_username = User.where({:username => input_username})
 
 end
 
+def create
+  input_username = params.fetch("username_box")
+
+  new_user = User.new
+  new_user.username = input_username
+
+  new_user.save
+  redirect_to("/users/" + new_user.username)
+
+end
+
+def update
+
+  the_user = params.fetch("path_id")
+
+  matching_user = User.where(:username => the_user)
+  @the_user = matching_user.at(0)
+  @the_user.username = params.fetch("username")
+
+  @the_user.save
+
+  redirect_to("/users/" + @the_user.username)
+
+end
+
 
 
 end

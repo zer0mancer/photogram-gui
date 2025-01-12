@@ -11,8 +11,13 @@
     Edit user
   </dt>
   <dd>
-    <form action="">
+    <form action="/update_user/<%= @the_user.username %>" method="post">
+          <label for="username">Username</label>
+      <input type="text" id="username" for="username" name="username" value="<%= @the_user.username %>" >
 
+    <button>
+    Update user
+    </button>
     </form>
   </dd>
 </dl>
