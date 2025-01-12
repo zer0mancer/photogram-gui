@@ -40,7 +40,7 @@ class PhotosController < ApplicationController
 
     new_photo.save
 
-    redirect_to("/photos/#{ new_photo.id}")
+    redirect_to("/photos/#{new_photo.id}")
 
   end
 
@@ -48,21 +48,19 @@ class PhotosController < ApplicationController
 
     the_id = params.fetch("path_id")
 
-    matching_photo = Photo.where(:id => the_id)
+    matching_photo = Photo.where({:id => the_id})
     the_photo = matching_photo.at(0)
 
 
-    input_image = params.fetch("browser_image")
-    input_caption = params.fetch("browser_caption")
+    input_image = params.fetch("photo_image")
+    input_caption = params.fetch("photo_caption")
 
     the_photo.image = input_image
     the_photo.caption = input_caption
 
     the_photo.save
 
-    redirect_to("/photos/" +  the_photo.id.to_s)
-
-
+    redirect_to("/photos/#{the_photo.id}")
 
   end
 

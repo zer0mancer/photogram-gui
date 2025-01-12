@@ -12,11 +12,11 @@
     <dt>Edit photo</dt>
     <dd>
       <form action="/update_photo/<%= @the_photo.id %>">
-      <label for="browser_image">Image</label>
-      <input type="text" id="browser_image" name="browser_image" placeholder="Enter a URL for the image..." value=" <%= @the_photo.image %>">
+      <label for="photo_image">Image</label>
+      <input type="text" id="photo_image" name="photo_image" placeholder="Enter a URL for the image..." value="<%= @the_photo.image %>">
 
-      <label for="browser_caption">Caption</label>
-      <textarea name="browser_caption" id="browser_caption" placeholder="Enter a caption for the photo..."><%= @the_photo.caption%></textarea>
+      <label for="photo_caption">Caption</label>
+      <textarea name="photo_caption" id="photo_caption" placeholder="Enter a caption for the photo..."><%= @the_photo.caption%></textarea>
       
       <button>
       Update photo
