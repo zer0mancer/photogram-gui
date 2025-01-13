@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  get("/", {:controller => "users", :action => "index"})
   get("/users", {:controller => "users", :action => "index"})
   get("/users/:path_id", {:controller => "users", :action => "details"})
   post("/create_user", {:controller => "users", :action => "create"})
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get("/delete_photo/:path_id", {:controller => "photos", :action => "destroy"})
   get("/update_photo/:path_id", {:controller => "photos", :action => "update"})
 
+  post("/create_comment", {:controller => "comments", :action => "create"})
+
+  
 
 
 end
